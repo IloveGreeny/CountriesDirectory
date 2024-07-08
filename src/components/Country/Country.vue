@@ -23,10 +23,10 @@ export default {
     this.fetchData();
   },
   methods: {
-  async  fetchData() { //
+  async  fetchData() {
     try {
       const response = await axios.get(' https://restcountries.com/v3.1/all?fields=name,flags,capital,currencies,region');
-      this.apiData = response.data.slice(0,10);
+      this.apiData = response.data.slice(0,12);
     } catch (e) {
       console.log(e);
     }
@@ -39,5 +39,33 @@ export default {
 .container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+}
+
+.container > div {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 250px;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container > div:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+  margin-top: 0;
+}
+
+img {
+  margin: 20px 0;
+}
+
+h3 {
+  font-weight: normal;
+  color: #666;
 }
 </style>
